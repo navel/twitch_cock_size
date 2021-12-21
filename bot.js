@@ -1,4 +1,6 @@
+require('dotenv').config();
 const tmi = require('tmi.js');
+console.log(process.env.BOT_USERNAME);
 const opts = {
   identity: {
     username: process.env.BOT_USERNAME,
