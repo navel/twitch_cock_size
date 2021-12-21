@@ -1,0 +1,29 @@
+{
+  "name": "twich_cock_size",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "node-fetch": "^2.6.6",
+    "tmi.js": "^1.8.5",
+    "tr46": "^0.0.3",
+    "webidl-conversions": "^3.0.1",
+    "whatwg-url": "^5.0.0",
+    "ws": "^8.3.0"
+  },
+  "scripts": {
+    "start": "node bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/navel/twich_cock_size.git"
+  },
+  "author": "navel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/navel/twich_cock_size/issues"
+  },
+  "homepage": "https://github.com/navel/twich_cock_size#readme"
+}
