@@ -35,20 +35,21 @@ function onMessageHandler (target, context, msg, self) {
 }
 
 function rollDick (username) {
-  const date_ob = new Date();
-  const date = (date_ob.getFullYear() + ("0" + (date_ob.getMonth() + 1)).slice(-2) + ("0" + date_ob.getDate()).slice(-2));
-  const crypto = require('crypto');
-  const hash = crypto.createHash('md5').update(username + date).digest('hex');
-  return (stringSum(hash) % 40) + 1;
+  return dailyHashRandom(1, 35, username + 'dick');
 }
 
 function rollBalls (username) {
+  const ballsTypes = ['leather', 'golden', 'huge', 'delicious', 'steel', 'stinky', 'hairy', 'no'];
+  const number = dailyHashRandom(0, 7, username + 'balls')
+  return ballsTypes[number];
+}
+
+function dailyHashRandom(from, to, prefix) {
   const date_ob = new Date();
   const date = (date_ob.getFullYear() + ("0" + (date_ob.getMonth() + 1)).slice(-2) + ("0" + date_ob.getDate()).slice(-2));
   const crypto = require('crypto');
-  const hash = crypto.createHash('md5').update(username + date).digest('hex');
-  const ballsTypes = ['leather', 'golden', 'huge', 'delicious', 'steel', 'stinky', 'hairy', 'no'];
-  return ballsTypes[(stringSum(hash) % 8)];
+  const hash = crypto.createHash('md5').update(prefix + date).digest('hex');
+  return stringSum(hash) % (to - from + 1) + from;
 }
 
 function stringSum(str) {
